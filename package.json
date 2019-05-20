@@ -1,0 +1,71 @@
+{
+  "name": "suspenseful",
+  "version": "1.0.0",
+  "description": "Suspense-based, SSR-capable data fetching",
+  "main": "dist/index.js",
+  "module": "dist/es/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build:cjs": "babel src -d dist --ignore \"src/__tests__/*.js\"",
+    "build:es": "cross-env ES=true babel src -d dist/es --ignore \"src/__tests__/*.js\"",
+    "build": "npm-run-all -s clean build:*",
+    "lint": "semistandard src/*.js",
+    "test": "jest src",
+    "clean": "rimraf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/iso-react/suspenseful.git"
+  },
+  "keywords": [
+    "isomorphic",
+    "react",
+    "universal",
+    "server",
+    "side",
+    "rendering",
+    "data",
+    "fetching"
+  ],
+  "author": "Alex Henderson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iso-react/suspenseful/issues"
+  },
+  "homepage": "https://github.com/iso-react/suspenseful#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
+    "@semantic-release/commit-analyzer": "^6.1.0",
+    "@semantic-release/github": "^5.2.10",
+    "@semantic-release/npm": "^5.1.4",
+    "@semantic-release/release-notes-generator": "^7.1.4",
+    "cross-env": "^5.2.0",
+    "jest": "^24.8.0",
+    "npm-run-all": "^4.1.5",
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0",
+    "react-hooks-testing-library": "^0.5.0",
+    "react-test-renderer": "^16.8.6",
+    "react-testing-library": "^7.0.0",
+    "semantic-release": "^16.0.0-beta.18",
+    "semistandard": "^13.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "dependencies": {
+    "@sindresorhus/fnv1a": "^1.2.0",
+    "isomorphic-fetch": "^2.2.1",
+    "react-ssr-prepass": "^1.0.5",
+    "tiny-lru": "^6.0.1"
+  }
+}
